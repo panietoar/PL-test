@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>PL Test</title>
+</head>
+
+<body>
+  <div class="language-selector">
+    <div class="language-selector__button">
+      <input class="language-selector__radio" type="radio" name="lang" id="lang_en" value="en">
+      <label class="language-selector__label" for="lang_en">EN</label>
+    </div>
+    <div class="language-selector__button">
+      <input class="language-selector__radio" type="radio" name="lang" id="lang_es" value="es">
+      <label class="language-selector__label" for="lang_es">ES</label>
+    </div>
+  </div>
+  <section class="content">
+    <div class="widget-container">
+      <ul class="linear-menu">
+      </ul>
+    </div>
+
+    <div class="widget-container">
+      <div class="profile-edit">
+        <div class="profile-edit__heading">
+        </div>
+        <div class="profile-edit__menu">
+          <ul class="profile-edit__list">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="x-template" class="linear-menu--template">
+    <li class="linear-menu__item" id="{{ url }}">
+      <a href="#{{ url }}" class="linear-menu__link">
+        <i class="linear-menu__icon material-icons">{{ icon }}</i>
+        <p class="linear-menu__text">{{ text }}</p>
+        <div class="linear-menu__notification {{ visibleClass }}">
+          <span class="linear-menu__notification-number">{{ notifications }}</span>
+        </div>
+      </a>
+    </li>
+  </script>
+
+  <script type="x-template" class="profile-edit__heading--template">
+    <div class="profile-edit__heading">
+      <div class="profile-edit__picture">
+        <img src="{{ image }}" alt="">
+      </div>
+      <div class="profile-edit__information">
+        <h4 class="profile-edit__name">{{ name }}</h4>
+        <p class="profile-edit__followers">{{ followersQty }} {{ followers }}</p>
+      </div>
+    </div>
+  </script>
+
+  <script type="x-template" class="profile-edit__list--template">
+    <li class="profile-edit__menu-item">
+      <p class="profile-edit__action">{{ text }}</p>
+      <i class="profile-edit__icon icon material-icons">{{ icon }}</i>
+    </li>
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

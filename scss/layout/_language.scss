@@ -1,0 +1,30 @@
+.language-selector {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background-color: $color-grey-light-2;
+  border-radius: 3px;
+
+  &__button {
+    display: inline-block;
+  }
+  
+  &__label {
+    padding: .5rem 1rem;
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+    transition: all .2s;
+    
+  }
+
+  &__radio {
+    display: none;
+
+    &:checked + .language-selector__label{
+      background-color: $color-green;
+      color: $color-white;
+    }
+
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "linearMenu": [
+    {
+      "text": "check in",
+      "icon": "place",
+      "url": "checkin",
+      "notifications": 3,
+      "visibleClass": "linear-menu__notification--visible"
+    },
+    {
+      "text": "eventos",
+      "icon": "favorite",
+      "url": "events",
+      "notifications": 0,
+      "visibleClass": ""
+    },
+    {
+      "text": "cuenta",
+      "icon": "person",
+      "url": "account",
+      "notifications": 0,
+      "visibleClass": ""
+    },
+    {
+      "text": "opciones",
+      "icon": "settings",
+      "url": "settings",
+      "notifications": 0,
+      "visibleClass": ""
+    }
+  ],
+  "profileEdit": {
+    "heading": {
+      "image": "images/profile-image.png",
+      "name": "courtney timmons",
+      "followersQty": 11323,
+      "followers": "seguidores"
+    },
+    "menu": [
+      {
+        "text": "editar usuario",
+        "icon": "person"
+      },
+      {
+        "text": "estadísticas web",
+        "icon": "equalizer"
+      },
+      {
+        "text": "subir opciones",
+        "icon": "build"
+      },
+      {
+        "text": "eventos",
+        "icon": "place"
+      }
+    ]
+  }
+}
