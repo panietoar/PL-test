@@ -23,7 +23,8 @@ p {
 .widget-container {
   margin: 3rem 1rem;
   width: 50vw;
-  position: relative; }
+  position: relative;
+  text-align: center; }
 
 .linear-menu {
   text-align: center; }
@@ -64,14 +65,11 @@ p {
     background-color: #FF0000;
     color: #fff;
     border-radius: 50%;
-    opacity: 0;
     width: 1.4rem;
     height: 1.4rem;
     position: absolute;
     top: -1.3rem;
     right: -1.3rem; }
-    .linear-menu__notification--visible {
-      opacity: 1; }
   .linear-menu__notification-number {
     position: absolute;
     top: 50%;
@@ -81,6 +79,7 @@ p {
 .profile-edit {
   display: inline-block; }
   .profile-edit__heading {
+    text-align: left;
     background-color: #ccc;
     padding: 3rem 5rem;
     border-radius: 3px;
@@ -93,7 +92,7 @@ p {
     .profile-edit__picture img {
       width: 100%; }
   .profile-edit__information {
-    width: 50%; }
+    width: 40%; }
   .profile-edit__name {
     font-size: 3rem;
     color: #fff;
@@ -130,10 +129,10 @@ p {
     transition: color .2s; }
 
 .content {
-  padding: 10rem;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center; }
 
 .language-selector {
   position: fixed;

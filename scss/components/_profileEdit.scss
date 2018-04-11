@@ -3,6 +3,7 @@
 
   // HEADING
   &__heading {
+    text-align: left;
     background-color: $color-grey-light-3;
     padding: 3rem 5rem;
     border-radius: 3px;
@@ -21,7 +22,7 @@
   }
 
   &__information {
-    width: 50%;
+    width: 40%;
   }
 
   &__name {

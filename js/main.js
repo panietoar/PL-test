@@ -2,7 +2,6 @@ var LINEAR_MENU_SELECTOR = '.linear-menu';
 var PROFILE_EDIT_HEADING_SELECTOR = '.profile-edit__heading';
 var PROFILE_EDIT_MENU_SELECTOR = '.profile-edit__list';
 
-
 (function() {
   fetchContent('en')
 
@@ -10,7 +9,6 @@ var PROFILE_EDIT_MENU_SELECTOR = '.profile-edit__list';
   radios.forEach(radio => radio.addEventListener('click', selectLanguage))
 
 })()
-
 
 function fetchContent (lang) {
   let url = `json/content-${lang}.json`,
@@ -31,8 +29,17 @@ function selectLanguage (event) {
 }
 
 function setPageContent (pageContent) {
-  renderList(LINEAR_MENU_SELECTOR, pageContent.linearMenu)
+  renderContent(LINEAR_MENU_SELECTOR, pageContent.linearMenu)
   renderProfileEdit(pageContent.profileEdit)
+}
+
+// Using handlebars
+function renderContent (selector, listContent) {
+  let stringTemplate = document.querySelector(`${selector}--template`).innerHTML,
+    template = Handlebars.compile(stringTemplate),
+    listHtml = template(listContent)
+  
+  document.querySelector(selector).innerHTML = listHtml
 }
 
 function renderProfileEdit (profileContent) {

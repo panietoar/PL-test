@@ -47,25 +47,30 @@
           <div class="stats__graph">
             <canvas id="stats-graph" width="200"></canvas>
           </div>
-          .stats__
+          <div class="stats__description"></div>
+          <footer class="stats__actions"></footer>
         </div>
       </section>
     </div>
   </section>
 
-  <script type="x-template" class="linear-menu--template">
-    <li class="linear-menu__item" id="{{ url }}">
-      <a href="#{{ url }}" class="linear-menu__link">
-        <i class="linear-menu__icon material-icons">{{ icon }}</i>
-        <p class="linear-menu__text">{{ text }}</p>
-        <div class="linear-menu__notification {{ visibleClass }}">
-          <span class="linear-menu__notification-number">{{ notifications }}</span>
-        </div>
-      </a>
-    </li>
+  <script type="text/x-handlebars-template" class="linear-menu--template">
+    {{#each items}}
+      <li class="linear-menu__item" id="{{ url }}">
+        <a href="#{{ url }}" class="linear-menu__link">
+          <i class="linear-menu__icon material-icons">{{ icon }}</i>
+          <p class="linear-menu__text">{{ text }}</p>
+          {{#if notifications }}
+            <div class="linear-menu__notification">
+              <span class="linear-menu__notification-number">{{ notifications }}</span>
+            </div>
+          {{/if}}
+        </a>
+      </li>
+    {{/each}}
   </script>
 
-  <script type="x-template" class="profile-edit__heading--template">
+  <script type="text/x-template" class="profile-edit__heading--template">
     <div class="profile-edit__heading">
       <div class="profile-edit__picture">
         <img src="{{ image }}" alt="">
@@ -77,13 +82,14 @@
     </div>
   </script>
 
-  <script type="x-template" class="profile-edit__list--template">
+  <script type="text/x-template" class="profile-edit__list--template">
     <li class="profile-edit__menu-item">
       <p class="profile-edit__action">{{ text }}</p>
       <i class="profile-edit__icon icon material-icons">{{ icon }}</i>
     </li>
   </script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 
