@@ -52,5 +52,52 @@
         "icon": "place"
       }
     ]
+  },
+  "stats": {
+    "tabs": [
+      {
+        "title": "estadisticas",
+        "default": true,
+        "content": {
+          "graphTitle": "transferencia de datos",
+          "files": 2435,
+          "size": 47,
+          "data": {
+            "audio": {
+              "value": 55,
+              "color": "green"
+            },
+            "video":{
+              "value": 23,
+              "color": "orange"
+            },
+            "photo": {
+              "value": 17,
+              "color": "yellow"
+            }
+          },
+          "ctas": [
+            {
+              "text": "subir archivos",
+              "icon": "cloud_upload"
+            },
+            {
+              "text": "compartir",
+              "icon": "share"
+            },
+            {
+              "text": "back up",
+              "icon": "cached"
+            }
+          ]
+        }
+      },
+      {
+        "title": "reporte mensual",
+        "content": {
+          "text": "No implementado"
+        }
+      }
+    ]
   }
 }

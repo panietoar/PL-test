@@ -8,6 +8,7 @@
     cursor: pointer;
     color: $color-grey-dark;
     transition: all .3s;
+
     
     a:link,
     a:visited {
@@ -31,6 +32,20 @@
 
     &:last-child {
       border-radius: 0 7px 7px 0;
+    }
+
+    
+    @include respond(phone) {
+      display: block;
+      border-radius: 0;
+
+      &:first-child {
+        border-radius: 7px 7px 0 0;
+      }
+  
+      &:last-child {
+        border-radius: 0 0 7px 7px;
+      }
     }
 
   }

@@ -1,0 +1,49 @@
+.promo {
+  background-color: $color-white;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 7px;
+  box-shadow: 0 .5rem 1rem rgba($color-black, .3);
+  position: relative;
+  display: inline-block;
+
+  &:hover &__banner{
+    transform: translate(0, -50%) scaleX(1);
+  }
+  
+  &__banner {
+    background-color: $color-green;
+    clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 20% 50%, 0% 0%);
+    padding: 1rem 1rem 1rem 2rem;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%) scaleX(0);
+    transform-origin: right;
+    font-weight: 700;
+    line-height: 1;
+    border-right: 5px solid $color-green-light;
+    transition: transform .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 5px;
+      height: 100%;      
+      background-color: $color-green;
+    }
+
+  }
+
+  &__text {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: $color-green-light-2;
+  }
+
+  &__offer {
+    color: $color-white;
+  }
+}
