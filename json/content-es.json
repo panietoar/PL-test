@@ -1,34 +1,32 @@
 {
-  "linearMenu": [
-    {
-      "text": "check in",
-      "icon": "place",
-      "url": "checkin",
-      "notifications": 3,
-      "visibleClass": "linear-menu__notification--visible"
-    },
-    {
-      "text": "eventos",
-      "icon": "favorite",
-      "url": "events",
-      "notifications": 0,
-      "visibleClass": ""
-    },
-    {
-      "text": "cuenta",
-      "icon": "person",
-      "url": "account",
-      "notifications": 0,
-      "visibleClass": ""
-    },
-    {
-      "text": "opciones",
-      "icon": "settings",
-      "url": "settings",
-      "notifications": 0,
-      "visibleClass": ""
-    }
-  ],
+  "linearMenu": {
+    "items": [
+      {
+        "text": "check in",
+        "icon": "place",
+        "url": "checkin",
+        "notifications": 3
+      },
+      {
+        "text": "eventos",
+        "icon": "favorite",
+        "url": "events",
+        "notifications": 0
+      },
+      {
+        "text": "cuenta",
+        "icon": "person",
+        "url": "account",
+        "notifications": 0
+      },
+      {
+        "text": "opciones",
+        "icon": "settings",
+        "url": "settings",
+        "notifications": 0
+      }
+    ]
+  },
   "profileEdit": {
     "heading": {
       "image": "images/profile-image.png",

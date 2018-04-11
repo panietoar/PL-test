@@ -1,0 +1,131 @@
+.stats {
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 1rem 1rem rgba($color-black, .4);
+
+  &__tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: .5rem;
+  }
+
+  &__tab {
+    padding: 1rem 4rem;
+    list-style: none;
+    cursor: pointer;
+    background-color: rgba($color-green, .6);
+    border-radius: 7px 7px 0 0;
+    color: $color-white;
+    text-transform: capitalize;
+    font-weight: 600;
+    transition: all .2s;
+    
+    &:hover {
+      background-color: rgba($color-green, .8);
+    }
+    
+    &--active {
+      background-color: $color-white;
+      color: $default-font-color;
+      
+      &:hover {
+        background-color: $color-white;
+      }
+    }
+  }
+  
+  &__diagram-tab {
+    position: relative;
+    background-color: $color-white;
+    border-radius: 5px; 
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  // GRAPH
+  &__graph {
+    padding-top: 5rem;
+  }
+
+  &__graph-heading {
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+  }
+
+  &__total {
+    @include absCenter;
+    top: 35%;
+  }
+
+  &__files {
+    color: $color-orange;
+    font-weight: 700;
+  }
+
+  &__size {
+    font-size: 2.4rem;
+    text-transform: capitalize;
+    font-weight: 900;
+    margin-top: -1.5rem;
+  }
+
+  // DESCRIPTION
+  &__description {
+    margin-top: 4rem; 
+  }
+
+  &__file-description {
+    background-color: $color-grey-light-2;
+    padding: 2rem 1rem;
+    
+    &--green {
+      border-top: 4px solid $color-green;
+    }
+
+    &--orange {
+      border-top: 4px solid $color-orange;
+    }
+
+    &--yellow {
+      border-top: 4px solid $color-yellow;
+    }
+
+    &:not(:last-child) {
+      border-right: 1px solid $color-white;
+    }
+  }
+
+  &__file-type {
+    font-weight: 900;
+    color: $color-grey-dark;
+  }
+
+  &__percentage {
+    color: $color-brown;
+    font-weight: 900;
+    font-size: 2.4rem;
+  }
+
+  // CTAs
+  &__actions {
+    color: $color-white;
+  }
+  
+  &__cta {
+    background-color: $color-brown;
+    padding: 2rem 1rem;
+    cursor: pointer;
+    transition: all .2s;
+    
+    &:hover {
+      background-color: $color-brown-dark;
+    }
+  }
+
+  &__cta-text {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+  }
+}

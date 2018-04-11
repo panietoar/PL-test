@@ -43,33 +43,29 @@
 
     <div class="widget-container">
       <section class="stats">
-        <div class="stats__diagram-tab">
-          <div class="stats__graph">
-            <canvas id="stats-graph" width="200"></canvas>
-          </div>
-          <div class="stats__description"></div>
-          <footer class="stats__actions"></footer>
-        </div>
+        <ul class="stats__tabs"></ul>
+        <div class="stats__diagram-tab"></div>
       </section>
     </div>
   </section>
 
+  
   <script type="text/x-handlebars-template" class="linear-menu--template">
     {{#each items}}
-      <li class="linear-menu__item" id="{{ url }}">
-        <a href="#{{ url }}" class="linear-menu__link">
-          <i class="linear-menu__icon material-icons">{{ icon }}</i>
-          <p class="linear-menu__text">{{ text }}</p>
-          {{#if notifications }}
-            <div class="linear-menu__notification">
-              <span class="linear-menu__notification-number">{{ notifications }}</span>
-            </div>
-          {{/if}}
-        </a>
-      </li>
+    <li class="linear-menu__item" id="{{ url }}">
+      <a href="#{{ url }}" class="linear-menu__link">
+        <i class="linear-menu__icon material-icons">{{ icon }}</i>
+        <p class="linear-menu__text">{{ text }}</p>
+        {{#if notifications }}
+        <div class="linear-menu__notification">
+          <span class="linear-menu__notification-number">{{ notifications }}</span>
+        </div>
+        {{/if}}
+      </a>
+    </li>
     {{/each}}
   </script>
-
+  
   <script type="text/x-template" class="profile-edit__heading--template">
     <div class="profile-edit__heading">
       <div class="profile-edit__picture">
@@ -81,7 +77,7 @@
       </div>
     </div>
   </script>
-
+  
   <script type="text/x-template" class="profile-edit__list--template">
     <li class="profile-edit__menu-item">
       <p class="profile-edit__action">{{ text }}</p>
@@ -89,7 +85,41 @@
     </li>
   </script>
 
+  <script type="text/x-handlebars-template" class="stats__tabs--template">
+    {{#each tabs}}
+      <li class="stats__tab {{#if default}}stats__tab--active{{/if}}">{{ title }}</li>
+    {{/each}}
+  </script>
+
+  <script type="text/x-handlebars-template" class="stats__diagram-tab--template">
+    <div class="stats__graph">
+      <h3 class="stats__graph-heading">{{ graphTitle }}</h3>
+      <div class="stats__total">
+        <p class="stats__files">{{ files }} files</p>
+        <p class="stats__size">{{ size }} gb</p>
+      </div>
+      <canvas id="stats-graph" width="400"></canvas>
+    </div>
+    <div class="stats__description grid-3-col">
+      {{#each data}}
+        <div class="stats__file-description stats__file-description--{{ this.color }}">
+          <p class="stats__file-type">{{ @key }}</p>
+          <p class="stats__percentage">{{ this.value }}%</p>
+        </div>
+      {{/each}}
+    </div>
+    <footer class="stats__actions grid-3-col">
+      {{#each ctas}}
+        <div class="stats__cta">
+          <i class="stats__cta-icon material-icons">{{ icon }}</i>
+          <p class="stats__cta-text">{{ text }}</p>
+        </div>
+        {{/each}} 
+    </footer>
+  </script>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 

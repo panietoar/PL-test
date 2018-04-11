@@ -1,6 +1,13 @@
-var LINEAR_MENU_SELECTOR = '.linear-menu';
-var PROFILE_EDIT_HEADING_SELECTOR = '.profile-edit__heading';
-var PROFILE_EDIT_MENU_SELECTOR = '.profile-edit__list';
+const LINEAR_MENU_SELECTOR = '.linear-menu';
+const PROFILE_EDIT_HEADING_SELECTOR = '.profile-edit__heading';
+const PROFILE_EDIT_MENU_SELECTOR = '.profile-edit__list';
+const STATS_TABS_SELECTOR = '.stats__tabs';
+const STATS_DIAGRAM_SELECTOR = '.stats__diagram-tab';
+const GRAPH_COLORS = {
+  green: '#41ac6d',
+  orange: '#ee2e14',
+  yellow: '#d8ab19'
+};
 
 (function() {
   fetchContent('en')
@@ -31,6 +38,7 @@ function selectLanguage (event) {
 function setPageContent (pageContent) {
   renderContent(LINEAR_MENU_SELECTOR, pageContent.linearMenu)
   renderProfileEdit(pageContent.profileEdit)
+  renderStats(pageContent.stats)
 }
 
 // Using handlebars
@@ -72,4 +80,41 @@ function renderList (selector, listContent) {
   });
   
   document.querySelector(selector).innerHTML = listHtml
+}
+
+function renderStats (statsContent) {
+  renderContent(STATS_TABS_SELECTOR, statsContent)
+  renderContent(STATS_DIAGRAM_SELECTOR, statsContent.tabs[0].content)
+
+  const data = processData(statsContent.tabs[0].content.data),
+    ctx = document.getElementById('stats-graph').getContext('2d')
+    chart = new Chart(ctx, {
+      type: 'pie',
+      data,
+      options: {
+        legend: {
+          display: false
+        }
+      }
+    })
+}
+
+function processData (data) {
+  const labels = Object.keys(data),
+    values = Object.values(data).map(dataItem => dataItem.value),
+    colors = Object.values(data).map(dataItem => dataItem.color).map(color => GRAPH_COLORS[color])
+
+  let diference = 100 - values.reduce((total, value) => total + value, 0)
+
+  if (diference > 0) {
+    values.push(diference)
+    labels.push('other')
+  }
+  return {
+    datasets: [{
+      data: values,
+      backgroundColor: colors
+    }],
+    labels
+  }
 }

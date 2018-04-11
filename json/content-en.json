@@ -52,5 +52,52 @@
         "icon": "place"
       }
     ]
+  },
+  "stats": {
+    "tabs": [
+      {
+        "title": "diagram stats",
+        "default": true,
+        "content": {
+          "graphTitle": "data transfer",
+          "files": 2435,
+          "size": 47,
+          "data": {
+            "audio": {
+              "value": 55,
+              "color": "green"
+            },
+            "video":{
+              "value": 23,
+              "color": "orange"
+            },
+            "photo": {
+              "value": 17,
+              "color": "yellow"
+            }
+          },
+          "ctas": [
+            {
+              "text": "upload files",
+              "icon": "cloud_upload"
+            },
+            {
+              "text": "share link",
+              "icon": "share"
+            },
+            {
+              "text": "back up",
+              "icon": "cached"
+            }
+          ]
+        }
+      },
+      {
+        "title": "month report",
+        "content": {
+          "text": "Not implemented"
+        }
+      }
+    ]
   }
 }

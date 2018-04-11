@@ -1,6 +1,6 @@
 .linear-menu {
   text-align: center;
-
+  
   &__item {
     background-color: $color-white;
     padding: 2rem;
@@ -62,6 +62,7 @@
     position: absolute;
     top: -1.3rem;
     right: -1.3rem;
+    font-size: 1rem;
   }
 
   &__notification-number {
